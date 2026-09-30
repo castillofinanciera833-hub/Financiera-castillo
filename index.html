@@ -127,6 +127,84 @@ nav.side-nav button,.side-growth,.side-user{position:relative;z-index:2}
   min-height:70px!important;background:linear-gradient(135deg,#062b65,#041a43)!important;
   border:1px solid #1184ff!important;border-radius:18px!important;
 }
+</style><style id="sidebar-position-final">
+/* === POSICIÓN EXACTA DEL PANEL DEL BOCETO === */
+:root{--ref-sidebar:300px!important}
+nav.side-nav{
+  top:0!important;
+  bottom:0!important;
+  height:100vh!important;
+  width:300px!important;
+  padding:178px 22px 18px!important;
+  gap:4px!important;
+  overflow:hidden!important;
+  justify-content:flex-start!important;
+}
+.app-header .brand{
+  left:0!important;top:0!important;width:300px!important;height:178px!important;
+  padding:20px 18px 8px!important;
+  background:linear-gradient(145deg,#071f50,#020c25)!important;
+  align-items:flex-start!important;
+}
+.logo-original{
+  width:264px!important;height:150px!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;
+}
+.logo-original img{
+  width:258px!important;height:150px!important;
+  object-fit:contain!important;
+}
+.app-header{
+  left:300px!important;height:96px!important;
+}
+.app-header .brand h1,.app-header .brand small{display:none!important}
+.app-header~nav button{
+  flex:0 0 52px!important;
+  min-height:52px!important;height:52px!important;
+  margin:0!important;
+  padding:7px 12px!important;
+  border-radius:15px!important;
+  font-size:17px!important;
+  line-height:1!important;
+  display:flex!important;
+  align-items:center!important;
+}
+.app-header~nav button span{
+  width:40px!important;height:40px!important;
+  margin-right:10px!important;
+  font-size:25px!important;
+}
+.side-spacer{display:none!important}
+.side-growth{
+  flex:0 0 118px!important;
+  min-height:118px!important;
+  margin-top:auto!important;
+  margin-bottom:10px!important;
+  padding:16px 18px!important;
+  border-radius:17px!important;
+}
+.side-user{
+  flex:0 0 70px!important;
+  min-height:70px!important;
+  margin:0!important;
+  border-radius:17px!important;
+}
+nav.side-nav:after{
+  bottom:135px!important;
+  height:350px!important;
+  left:-110px!important;
+  right:-80px!important;
+}
+main{
+  margin-left:300px!important;
+  width:calc(100% - 300px)!important;
+}
+@media(min-width:761px) and (max-width:1199px){
+  body{min-width:1180px!important}
+  nav.side-nav{width:300px!important}
+  .app-header .brand{width:300px!important}
+  main{margin-left:300px!important;width:calc(100% - 300px)!important}
+}
 </style></head>
 <body>
 <header class="app-header">
