@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+<rect width="800" height="800" fill="#fff"/>
+<g fill="none" stroke="#11145b" stroke-width="18" stroke-linejoin="round">
+<path fill="#fff" d="M215 350V245h72v-92h80v-55h66v55h80v92h72v105"/>
+<path fill="#fff" d="M330 350V178h55V98h30v80h55v172"/>
+<path fill="#fff" d="M270 350V265h40v-45h34v130M530 350V265h-40v-45h-34v130"/>
+<path fill="#11145b" stroke="none" d="M390 350v-66c0-34 20-54 40-54s40 20 40 54v66z"/>
+<path fill="#11145b" stroke="none" d="M348 188h28v38h-28zM444 188h28v38h-28zM278 285h25v32h-25zM497 285h25v32h-25z"/>
+<path d="M190 354c65-24 130 0 205 0s140-24 215 0"/>
+</g>
+<path fill="#f3b43f" d="M535 85l12 32 34 2-26 22 8 34-28-18-29 18 9-34-27-22 34-2z"/>
+<text x="400" y="505" text-anchor="middle" font-family="Georgia,Times New Roman,serif" font-size="112" font-weight="700" fill="#050505" letter-spacing="2">CASTILLO</text>
+<text x="400" y="590" text-anchor="middle" font-family="Georgia,Times New Roman,serif" font-size="55" font-weight="600" fill="#050505" letter-spacing="3">FINANCIERA</text>
+</svg>
