@@ -968,4 +968,167 @@ document.addEventListener('DOMContentLoaded',function(){
   const target=document.querySelector(".top-brand-logo img"); if(target) target.src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20520%20360%22%3E%3Crect%20width%3D%22520%22%20height%3D%22360%22%20fill%3D%22none%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%2214%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M145%20150V90h48V55h48v35h38v60h48V90h48v60%22%2F%3E%3Cpath%20d%3D%22M195%20150v-48h38v48M287%20150v-48h38v48%22%2F%3E%3Cpath%20d%3D%22M205%20205v-55h110v55M180%20205h160%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M275%2054l9%2018%2020%203-14%2014%203%2020-18-10-18%2010%203-20-14-14%2020-3z%22%20fill%3D%22%23ffd33d%22%2F%3E%3Ctext%20x%3D%22260%22%20y%3D%22270%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-weight%3D%22800%22%20font-size%3D%2272%22%20fill%3D%22%23fff%22%3ECASTILLO%3C%2Ftext%3E%3Ctext%20x%3D%22260%22%20y%3D%22320%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2234%22%20fill%3D%22%23fff%22%3EFINANCIERA%3C%2Ftext%3E%3C%2Fsvg%3E";
 });
 </script>
-</body></html>
+
+<style id="ipad-reference-calibrated">
+/* ===== CALIBRACIÓN FINAL: iPad horizontal según el boceto ===== */
+@media (min-width:761px) and (max-width:1199px) and (orientation:landscape){
+  :root{--ref-sidebar:240px!important}
+  html,body{
+    width:1440px!important;min-width:1440px!important;
+    height:100vh!important;min-height:0!important;
+    overflow-x:hidden!important;overflow-y:auto!important;
+    background:#020b20!important;
+  }
+
+  /* Barra superior */
+  .app-header{
+    position:fixed!important;
+    left:240px!important;right:0!important;top:0!important;
+    width:1200px!important;height:77px!important;
+    padding:10px 24px!important;
+    display:flex!important;align-items:center!important;
+    background:linear-gradient(180deg,#031338,#02102d)!important;
+    border-bottom:1px solid #1557a7!important;
+    z-index:100!important;
+  }
+  .app-header .brand{
+    position:absolute!important;
+    left:-240px!important;top:0!important;
+    width:240px!important;height:176px!important;
+    padding:8px 14px!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    background:linear-gradient(145deg,#061f50,#020b25)!important;
+    z-index:120!important;
+  }
+  .app-header .brand h1,.app-header .brand small,
+  .top-brand-logo{display:none!important}
+  .logo-original{
+    width:218px!important;height:158px!important;
+    margin:0!important;display:flex!important;
+    align-items:center!important;justify-content:center!important;
+    overflow:hidden!important;background:transparent!important;
+  }
+  .logo-original svg{
+    width:216px!important;height:150px!important;
+    display:block!important;
+  }
+  .top-search{
+    height:43px!important;max-width:500px!important;
+    flex:1 1 500px!important;margin:0!important;
+    border-radius:24px!important;
+    background:#061f50!important;border:1px solid #1267ca!important;
+  }
+  .top-actions{margin-left:auto!important;gap:18px!important}
+
+  /* Barra lateral */
+  nav.side-nav{
+    position:fixed!important;left:0!important;top:176px!important;bottom:0!important;
+    width:240px!important;height:calc(100vh - 176px)!important;
+    padding:10px 14px 14px!important;
+    gap:2px!important;overflow:hidden!important;
+    background:linear-gradient(180deg,#03163d 0%,#020b22 100%)!important;
+    border-right:1px solid #1163c5!important;
+    z-index:90!important;
+  }
+  .app-header~nav button{
+    flex:0 0 43px!important;height:43px!important;min-height:43px!important;
+    padding:5px 10px!important;margin:0!important;
+    border-radius:13px!important;font-size:15px!important;
+    font-weight:600!important;
+  }
+  .app-header~nav button span{
+    flex:0 0 32px!important;width:32px!important;height:32px!important;
+    margin-right:8px!important;font-size:22px!important;
+  }
+  .app-header~nav button.active{
+    background:linear-gradient(90deg,#096df1,#0ba8f7)!important;
+    box-shadow:0 7px 20px #006cff45!important;
+  }
+  .side-growth{
+    flex:0 0 94px!important;min-height:94px!important;
+    margin-top:auto!important;margin-bottom:7px!important;
+    padding:12px 13px!important;border-radius:15px!important;
+  }
+  .side-growth b{font-size:12px!important;line-height:1.25!important}
+  .side-growth i{margin-top:7px!important}
+  .side-user{
+    flex:0 0 57px!important;min-height:57px!important;
+    border-radius:14px!important;padding:7px 9px!important;
+  }
+
+  /* Contenido: exactamente después del encabezado, sin desplazamiento */
+  main{
+    margin-left:240px!important;
+    width:1200px!important;max-width:none!important;
+    padding:91px 22px 22px!important;
+  }
+  .screen{width:1156px!important;max-width:none!important;margin:0!important}
+  .welcome{
+    width:1156px!important;height:88px!important;min-height:88px!important;
+    margin-bottom:14px!important;border-radius:15px!important;
+    padding:15px 20px!important;
+  }
+  .welcome h2{font-size:29px!important}
+  .welcome p{font-size:15px!important;margin-top:5px!important}
+  .goal-copy{font-size:14px!important;gap:15px!important;padding-left:20px!important}
+  .goal-copy strong{font-size:43px!important}
+
+  .dashboard-layout{
+    width:1156px!important;
+    grid-template-columns:710px 280px!important;
+    gap:12px!important;
+  }
+  .stats-grid{grid-template-columns:repeat(4,1fr)!important;gap:10px!important}
+  .dash-stat{min-height:156px!important;height:156px!important;padding:13px!important;border-radius:15px!important}
+  .dash-stat .stat-icon{width:39px!important;height:39px!important;font-size:19px!important;margin-bottom:8px!important}
+  .dash-stat span{font-size:12px!important}
+  .dash-stat b{font-size:24px!important;margin:4px 0!important}
+  .dash-stat small{font-size:11px!important}
+  .progress{height:7px!important;margin-top:8px!important}
+
+  .tasks-card{min-height:260px!important;padding:14px 17px!important;margin-top:12px!important}
+  .section-title{font-size:16px!important}
+  .tasks>div{padding:8px 0!important;font-size:16px!important}
+  .tasks span{font-size:13px!important}
+  .tasks time{font-size:11px!important}
+
+  .finance-card{min-height:165px!important}
+  .goals-card{min-height:82px!important}
+  .cut-strip{min-height:82px!important}
+
+  .dashboard-side{gap:12px!important}
+  .quick{min-height:285px!important;padding:14px!important}
+  .quick h3{font-size:19px!important;margin-bottom:8px!important}
+  .quick button{min-height:45px!important;margin:6px 0!important;padding:9px 13px!important;font-size:14px!important}
+  .side-functions{min-height:145px!important;padding:13px!important}
+  .calendar{min-height:260px!important;padding:14px!important}
+  .motto{min-height:160px!important;padding:18px!important}
+}
+
+/* ===== iPad vertical: conserva el mismo diseño, reorganizado ===== */
+@media (min-width:761px) and (max-width:1199px) and (orientation:portrait){
+  html,body{width:100%!important;min-width:0!important;overflow-x:hidden!important}
+  .app-header{
+    position:fixed!important;left:0!important;top:0!important;width:100%!important;
+    height:74px!important;padding:8px 12px!important;z-index:100!important;
+  }
+  .app-header .brand{
+    position:absolute!important;left:0!important;top:0!important;
+    width:190px!important;height:74px!important;padding:4px!important;
+  }
+  .app-header .brand h1,.app-header .brand small,.top-brand-logo{display:none!important}
+  .logo-original{width:175px!important;height:68px!important}
+  .logo-original svg{width:175px!important;height:66px!important}
+  .top-search{margin-left:190px!important;height:42px!important}
+  nav.side-nav{
+    top:74px!important;bottom:0!important;width:190px!important;
+    height:calc(100vh - 74px)!important;padding:10px!important;
+  }
+  .app-header~nav button{min-height:44px!important;height:44px!important;font-size:14px!important}
+  main{margin-left:190px!important;width:calc(100% - 190px)!important;padding:88px 12px 20px!important}
+  .screen{width:100%!important}
+  .welcome{height:90px!important;min-height:90px!important}
+  .dashboard-layout{grid-template-columns:1fr!important}
+  .stats-grid{grid-template-columns:repeat(2,1fr)!important}
+}
+</style></body></html>
