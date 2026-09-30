@@ -11,7 +11,7 @@
   }
 
   async function pushCloud() {
-    if (cloudBusy) return;
+    if (cloudBusy || !window.state) return false;
     cloudBusy = true;
     try {
       const response = await fetch('/api/state', {
@@ -20,11 +20,15 @@
         body: JSON.stringify(window.state)
       });
       const result = await response.json().catch(() => ({}));
-      if (!response.ok || !result.ok) throw new Error(result.error || 'No se pudo guardar en la nube');
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || ('HTTP ' + response.status));
+      }
       localStorage.setItem('fc_cloud_connected', '1');
       setCloudStatus('<b>☁️ Guardado en la nube</b><br><small>Base de datos Neon conectada. Último guardado: ' + new Date().toLocaleTimeString('es-MX') + '</small>', true);
+      return true;
     } catch (error) {
-      setCloudStatus('<b>⚠️ Sin conexión con la nube</b><br><small>La app continúa guardando en este dispositivo. Se reintentará automáticamente.</small>', false);
+      setCloudStatus('<b>⚠️ No se pudo guardar en la nube</b><br><small>Se conservaron tus datos en este dispositivo. Reintentaremos automáticamente.</small>', false);
+      return false;
     } finally {
       cloudBusy = false;
     }
@@ -35,10 +39,12 @@
     cloudTimer = setTimeout(pushCloud, 500);
   }
 
-  window.save = function() {
-    localSave();
-    queueCloudSave();
-  };
+  if (typeof localSave === 'function') {
+    window.save = function() {
+      localSave();
+      queueCloudSave();
+    };
+  }
 
   async function bootCloud() {
     try {
@@ -49,8 +55,8 @@
 
       if (result.exists && result.state) {
         window.state = result.state;
-        localSave();
-        window.renderHome();
+        if (typeof localSave === 'function') localSave();
+        if (typeof window.renderHome === 'function') window.renderHome();
         if (typeof window.renderClients === 'function') window.renderClients();
         setCloudStatus('<b>☁️ Datos cargados desde la nube</b><br><small>La información de Financiera Castillo ya está disponible en este dispositivo.</small>', true);
       } else {
@@ -66,10 +72,23 @@
     window.renderData = function() {
       originalRenderData();
       if (localStorage.getItem('fc_cloud_connected') === '1') {
-        setCloudStatus('<b>☁️ Guardado en la nube</b><br><small>Base de datos Neon conectada.</small>', true);
+        setCloudStatus('<b>☁️ Conectado a la nube</b><br><small>Se verificará el guardado automáticamente.</small>', true);
       }
     };
   }
 
-  bootCloud();
+  function startWhenReady(attempt = 0) {
+    if (window.state && document.getElementById('storageStatus')) {
+      bootCloud();
+      return;
+    }
+    if (attempt < 30) setTimeout(() => startWhenReady(attempt + 1), 250);
+    else bootCloud();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => startWhenReady());
+  } else {
+    startWhenReady();
+  }
 })();
