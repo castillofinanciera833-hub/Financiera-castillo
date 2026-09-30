@@ -479,8 +479,13 @@ main{
 }
 </style>
 <style id="original-logo-style">
-.app-header .brand{padding:8px 18px!important;justify-content:center!important}
-.logo-original{width:250px!important;height:82px!important;background:#fff!important;border-radius:14px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;box-shadow:0 4px 18px #0005!important}
-.logo-original img{width:230px!important;height:auto!important;display:block!important;object-fit:contain!important}
-@media(max-width:760px){.app-header .brand{justify-content:flex-start!important;padding:0!important}.logo-original{width:170px!important;height:58px!important;border-radius:10px!important}.logo-original img{width:155px!important}}
+/* Logo original: se muestra completo, recortando únicamente el espacio blanco de la imagen fuente */
+.app-header .brand{padding:7px 18px!important;justify-content:center!important}
+.logo-original{width:154px!important;height:82px!important;background:#fff!important;border-radius:14px!important;display:block!important;position:relative!important;overflow:hidden!important;box-shadow:0 4px 18px #0005!important}
+.logo-original img{position:absolute!important;width:216px!important;height:216px!important;max-width:none!important;left:-11px!important;top:-57px!important;display:block!important;object-fit:contain!important}
+@media(max-width:760px){
+  .app-header .brand{justify-content:flex-start!important;padding:0!important}
+  .logo-original{width:165px!important;height:58px!important;border-radius:10px!important}
+  .logo-original img{width:153px!important;height:153px!important;left:6px!important;top:-41px!important}
+}
 </style></body></html>
