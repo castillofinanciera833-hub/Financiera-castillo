@@ -1368,4 +1368,90 @@ document.addEventListener('DOMContentLoaded',function(){
   .app-header{left:300px!important;width:1173px!important}
   main{margin-left:300px!important;padding-top:102px!important}
 }
+</style>
+<style id="ipad-logo-overlap-fix">
+/* ===== CORRECCIÓN FINAL: logo contenido dentro de sus 300 x 220 px ===== */
+@media (orientation:landscape) and (min-width:1000px) and (max-width:1600px){
+  html,body{
+    width:1473px!important;min-width:1473px!important;
+    height:1024px!important;min-height:1024px!important;
+    overflow:hidden!important;
+  }
+
+  .app-header{
+    left:300px!important;top:0!important;
+    width:1173px!important;height:96px!important;
+    overflow:visible!important;
+  }
+
+  .app-header .brand{
+    position:absolute!important;
+    left:-300px!important;top:0!important;
+    width:300px!important;height:220px!important;
+    padding:12px!important;
+    margin:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+    box-sizing:border-box!important;
+    background:linear-gradient(145deg,#06245c 0%,#031331 100%)!important;
+    z-index:500!important;
+  }
+
+  .app-header .brand .logo-original{
+    position:relative!important;
+    width:276px!important;height:196px!important;
+    max-width:276px!important;max-height:196px!important;
+    margin:0!important;padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+    box-sizing:border-box!important;
+    background:transparent!important;
+  }
+
+  .app-header .brand .logo-original svg{
+    display:block!important;
+    width:270px!important;height:187px!important;
+    max-width:270px!important;max-height:187px!important;
+    min-width:0!important;min-height:0!important;
+    flex:0 0 auto!important;
+    object-fit:contain!important;
+  }
+
+  /* Oculta el mini-logo del header para evitar duplicado */
+  .app-header .top-brand-logo{
+    display:none!important;
+  }
+
+  nav.side-nav{
+    left:0!important;top:220px!important;
+    width:300px!important;height:804px!important;
+    padding:12px 22px 18px!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+  }
+
+  main{
+    margin-left:300px!important;
+    width:1173px!important;
+    height:804px!important;
+    padding:112px 18px 12px!important;
+    box-sizing:border-box!important;
+  }
+
+  .screen{
+    width:1137px!important;
+    max-width:none!important;
+  }
+
+  .welcome{
+    width:1137px!important;
+    height:90px!important;
+    min-height:90px!important;
+    margin-bottom:14px!important;
+  }
+}
 </style></body></html>
