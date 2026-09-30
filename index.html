@@ -1476,4 +1476,200 @@ document.addEventListener('DOMContentLoaded',function(){
   }
 }
 </style>
+
+<style id="orientacion-fija-horizontal-vertical">
+/* =========================================================
+   FINANCIERA CASTILLO — DOS BOCETOS FIJOS
+   HORIZONTAL = tablero ancho
+   VERTICAL   = tablero vertical independiente
+   No se mezclan ni se transforman entre sí.
+   ========================================================= */
+
+/* ---------- iPAD HORIZONTAL ---------- */
+@media (min-width:761px) and (orientation:landscape){
+  html,body{
+    width:100%!important;min-width:0!important;
+    overflow-x:hidden!important;
+    background:#020b20!important;
+  }
+
+  .app-header{
+    position:fixed!important;
+    left:300px!important;top:0!important;right:0!important;
+    width:calc(100% - 300px)!important;height:96px!important;
+    z-index:300!important;box-sizing:border-box!important;
+    display:flex!important;align-items:center!important;
+    padding:16px 28px!important;
+  }
+
+  .app-header .brand{
+    position:fixed!important;
+    left:0!important;top:0!important;
+    width:300px!important;height:220px!important;
+    padding:12px!important;box-sizing:border-box!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    background:linear-gradient(145deg,#06245c,#031331)!important;
+    z-index:400!important;
+  }
+  .app-header .brand h1,.app-header .brand small,
+  .app-header .top-brand-logo{display:none!important}
+
+  .app-header .brand .logo-original{
+    width:270px!important;height:190px!important;
+    margin:0!important;padding:0!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    overflow:hidden!important;background:transparent!important;
+  }
+  .app-header .brand .logo-original svg{
+    width:250px!important;height:173px!important;
+    max-width:250px!important;max-height:173px!important;
+    display:block!important;flex:none!important;
+  }
+
+  nav.side-nav{
+    position:fixed!important;
+    left:0!important;top:220px!important;bottom:0!important;
+    width:300px!important;height:calc(100vh - 220px)!important;
+    padding:12px 22px 18px!important;
+    overflow:hidden!important;box-sizing:border-box!important;
+    z-index:250!important;
+  }
+  .app-header~nav button{
+    width:100%!important;height:52px!important;min-height:52px!important;
+    flex:0 0 52px!important;font-size:17px!important;
+    padding:7px 14px!important;
+  }
+
+  main{
+    margin-left:300px!important;
+    width:calc(100% - 300px)!important;
+    max-width:none!important;
+    padding:112px 18px 24px!important;
+    box-sizing:border-box!important;
+  }
+  .screen{width:100%!important;max-width:none!important}
+  .welcome{width:100%!important;height:90px!important;min-height:90px!important}
+  .dashboard-layout{
+    width:100%!important;
+    grid-template-columns:minmax(0,1fr) 300px!important;
+    gap:15px!important;
+  }
+  .stats-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important}
+  .dash-stat{min-width:0!important;height:156px!important}
+  .dashboard-side{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+  .quick{min-height:285px!important}
+  .tasks-card{min-height:260px!important}
+  .finance-card{min-height:165px!important}
+}
+
+/* ---------- iPAD VERTICAL: BOCETO DISTINTO ---------- */
+@media (min-width:761px) and (orientation:portrait){
+  html,body{
+    width:100%!important;min-width:0!important;
+    overflow-x:hidden!important;overflow-y:auto!important;
+    background:#020b20!important;
+  }
+
+  .app-header{
+    position:fixed!important;
+    left:0!important;top:0!important;right:0!important;
+    width:100%!important;height:82px!important;
+    padding:8px 14px!important;box-sizing:border-box!important;
+    z-index:300!important;display:flex!important;align-items:center!important;
+  }
+
+  .app-header .brand{
+    position:absolute!important;
+    left:0!important;top:0!important;
+    width:220px!important;height:82px!important;
+    padding:5px 8px!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    background:linear-gradient(145deg,#06245c,#031331)!important;
+  }
+  .app-header .brand h1,.app-header .brand small,
+  .app-header .top-brand-logo{display:none!important}
+  .app-header .brand .logo-original{
+    width:205px!important;height:72px!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    overflow:hidden!important;
+  }
+  .app-header .brand .logo-original svg{
+    width:195px!important;height:68px!important;
+    display:block!important;
+  }
+
+  .top-search{
+    margin-left:220px!important;
+    width:auto!important;flex:1!important;height:46px!important;
+    min-width:0!important;
+  }
+
+  nav.side-nav{
+    position:fixed!important;
+    left:0!important;top:82px!important;bottom:0!important;
+    width:220px!important;height:calc(100vh - 82px)!important;
+    padding:12px 12px 16px!important;gap:3px!important;
+    overflow:hidden!important;box-sizing:border-box!important;
+    z-index:250!important;
+  }
+  .app-header~nav button{
+    width:100%!important;height:48px!important;min-height:48px!important;
+    flex:0 0 48px!important;font-size:15px!important;
+    padding:5px 9px!important;border-radius:13px!important;
+  }
+  .app-header~nav button span{
+    width:34px!important;height:34px!important;flex-basis:34px!important;
+    font-size:21px!important;margin-right:7px!important;
+  }
+  .side-growth{min-height:100px!important;flex-basis:100px!important}
+  .side-user{min-height:62px!important;flex-basis:62px!important}
+
+  main{
+    margin-left:220px!important;
+    width:calc(100% - 220px)!important;
+    max-width:none!important;
+    padding:98px 14px 24px!important;
+    box-sizing:border-box!important;
+  }
+  .screen{width:100%!important;max-width:none!important}
+  .welcome{
+    width:100%!important;height:auto!important;min-height:110px!important;
+    padding:18px!important;
+  }
+  .welcome h2{font-size:25px!important}
+  .goal-copy{font-size:12px!important}
+  .goal-copy strong{font-size:30px!important}
+
+  .dashboard-layout{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+    width:100%!important;
+  }
+  .stats-grid{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+  }
+  .dash-stat{
+    min-width:0!important;height:145px!important;
+    padding:12px!important;
+  }
+  .dashboard-side{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:10px!important;
+  }
+  .quick{grid-column:1/-1!important;min-height:245px!important}
+  .side-functions,.calendar,.motto{min-height:180px!important}
+  .tasks-card{min-height:250px!important}
+  .finance-card{min-height:165px!important}
+  .goals-card{min-height:90px!important}
+}
+
+/* ---------- TELÉFONO: NO CAMBIAR SU DISEÑO ACTUAL ---------- */
+@media (max-width:760px){
+  /* Se conserva el comportamiento móvil existente. */
+}
+</style>
 </body></html>
