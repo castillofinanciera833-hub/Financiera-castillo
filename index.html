@@ -505,7 +505,148 @@ nav.side-nav:after{bottom:125px!important;height:360px!important;left:-120px!imp
   .motto{min-height:155px!important}
   .finance-row{grid-template-columns:minmax(0,1fr) 190px!important}
 }
-</style></head>
+</style>
+<style id="castillo-final-both-orientations">
+/* ===== AJUSTE FINAL: boceto aplicado en HORIZONTAL y VERTICAL ===== */
+
+/* Logo: siempre visible, grande y centrado dentro del encabezado lateral */
+.app-header .brand .logo-original,
+.app-header .brand .logo-original svg{
+  visibility:visible!important;
+  opacity:1!important;
+}
+.app-header .brand .logo-original{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:visible!important;
+  background:transparent!important;
+}
+.app-header .brand .logo-original svg{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  max-width:none!important;
+  max-height:none!important;
+}
+
+/* ===== iPad HORIZONTAL ===== */
+@media (min-width:761px) and (orientation:landscape){
+  .app-header .brand{
+    width:300px!important;
+    height:250px!important;
+    left:0!important;
+    top:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:10px!important;
+    z-index:500!important;
+  }
+  .app-header .brand .logo-original{
+    width:280px!important;
+    height:225px!important;
+  }
+  .app-header .brand .logo-original svg{
+    width:260px!important;
+    height:205px!important;
+  }
+  nav.side-nav{
+    left:0!important;
+    top:250px!important;
+    width:300px!important;
+    height:calc(100vh - 250px)!important;
+    padding:12px 18px 18px!important;
+    z-index:450!important;
+  }
+  .app-header{
+    left:300px!important;
+    width:calc(100% - 300px)!important;
+    height:88px!important;
+    z-index:400!important;
+  }
+  main{
+    margin-left:300px!important;
+    width:calc(100% - 300px)!important;
+    padding-top:102px!important;
+  }
+  .dashboard-layout{
+    grid-template-columns:minmax(0,1fr) 300px!important;
+    gap:15px!important;
+  }
+  .stats-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:12px!important;
+  }
+}
+
+/* ===== iPad VERTICAL ===== */
+@media (min-width:761px) and (orientation:portrait){
+  html,body{
+    width:100%!important;
+    min-width:0!important;
+    overflow-x:hidden!important;
+  }
+  .app-header{
+    left:0!important;
+    top:0!important;
+    width:100%!important;
+    height:82px!important;
+    padding:8px 12px!important;
+  }
+  .app-header .brand{
+    position:absolute!important;
+    left:0!important;
+    top:0!important;
+    width:210px!important;
+    height:150px!important;
+    padding:8px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    z-index:500!important;
+  }
+  .app-header .brand .logo-original{
+    width:195px!important;
+    height:135px!important;
+  }
+  .app-header .brand .logo-original svg{
+    width:185px!important;
+    height:128px!important;
+  }
+  .top-search{
+    margin-left:215px!important;
+    height:44px!important;
+  }
+  nav.side-nav{
+    left:0!important;
+    top:150px!important;
+    bottom:0!important;
+    width:210px!important;
+    height:calc(100vh - 150px)!important;
+    padding:10px 12px 16px!important;
+  }
+  .app-header~nav button{
+    height:48px!important;
+    min-height:48px!important;
+    font-size:15px!important;
+  }
+  main{
+    margin-left:210px!important;
+    width:calc(100% - 210px)!important;
+    padding:96px 14px 20px!important;
+  }
+  .dashboard-layout{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+  }
+  .stats-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+  }
+}
+</style>
+</head>
 <body>
 <header class="app-header">
   <div class="brand"><div class="logo-original" aria-label="Castillo Financiera">
