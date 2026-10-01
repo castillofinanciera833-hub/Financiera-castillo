@@ -31,6 +31,7 @@ module.exports = async (req, res) => {
     await ensureTable();
 
     if (req.method === 'GET') {
+      if (req.query && req.query.reset === '1') { await sql`DELETE FROM fc_state WHERE id = 1`; return res.status(200).json({ ok: true, reset: true }); }
       const rows = await sql`SELECT state, updated_at FROM fc_state WHERE id = 1`;
       if (!rows.length) return res.status(200).json({ ok: true, exists: false, state: null });
       return res.status(200).json({ ok: true, exists: true, state: rows[0].state, updatedAt: rows[0].updated_at });
