@@ -879,6 +879,45 @@ nav.side-nav:after{bottom:125px!important;height:360px!important;left:-120px!imp
   #home .section-title .link-btn{display:none!important}
   #home .cut-strip button{display:none!important}
 }
+</style><style id="fixed-image-dashboard-final">
+/* === PANEL FIJO: LA IMAGEN SUBIDA ES EL PANEL, NO UNA RECREACIÓN === */
+body:has(#home.active){overflow:hidden!important}
+body:has(#home.active) .app-header,
+body:has(#home.active) .side-nav{display:none!important}
+body:has(#home.active) main{margin:0!important;padding:0!important;width:100%!important;max-width:none!important;height:100vh!important;overflow:hidden!important}
+#home .fixed-dashboard-image{position:fixed;inset:0;width:100vw;height:100vh;overflow:hidden;background:#03102e;z-index:50}
+#home .fixed-dashboard-image>img{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block;user-select:none;-webkit-user-drag:none}
+#home .fixed-hit{position:absolute;z-index:60;display:block;background:transparent;border:0;padding:0;margin:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+#home .fixed-hit:hover{background:rgba(0,190,255,.06)}
+/* Barra lateral */
+.hit-inicio{left:1.8%;top:17.5%;width:16%;height:5.2%}
+.hit-clientes{left:1.8%;top:23.8%;width:16%;height:5.0%}
+.hit-creditos{left:1.8%;top:29.0%;width:16%;height:5.0%}
+.hit-pagos{left:1.8%;top:34.0%;width:16%;height:5.0%}
+.hit-cuentas{left:1.8%;top:39.0%;width:16%;height:5.0%}
+.hit-reportes{left:1.8%;top:44.0%;width:16%;height:5.0%}
+.hit-calendario{left:1.8%;top:49.0%;width:16%;height:5.0%}
+.hit-documentos{left:1.8%;top:54.8%;width:16%;height:5.0%}
+.hit-configuracion{left:1.8%;top:60.0%;width:16%;height:5.0%}
+/* Acciones rápidas */
+.hit-nuevo-cliente{left:79.0%;top:19.5%;width:18.0%;height:4.1%}
+.hit-nuevo-credito{left:79.0%;top:24.2%;width:18.0%;height:4.1%}
+.hit-registrar-pago{left:79.0%;top:28.9%;width:18.0%;height:4.1%}
+.hit-nueva-cuenta{left:79.0%;top:33.7%;width:18.0%;height:4.1%}
+.hit-generar-reporte{left:79.0%;top:38.4%;width:18.0%;height:4.1%}
+.hit-subir-documento{left:79.0%;top:43.1%;width:18.0%;height:4.1%}
+/* Accesos rápidos */
+.hit-acceso-clientes{left:79.0%;top:56.8%;width:8.8%;height:8.6%}
+.hit-acceso-creditos{left:88.8%;top:56.8%;width:8.8%;height:8.6%}
+.hit-acceso-pagos{left:79.0%;top:66.7%;width:8.8%;height:8.6%}
+.hit-acceso-reportes{left:88.8%;top:66.7%;width:8.8%;height:8.6%}
+.hit-acceso-documentos{left:79.0%;top:76.6%;width:8.8%;height:8.6%}
+.hit-acceso-configuracion{left:88.8%;top:76.6%;width:8.8%;height:8.6%}
+@media (orientation:portrait) and (max-width:1199px){
+  #home .fixed-dashboard-image{display:none!important}
+  #home:before{content:"Gira el iPad a horizontal para ver el panel de Financiera Castillo";display:grid;place-items:center;height:100vh;padding:30px;text-align:center;font-size:20px;font-weight:700;color:#fff;background:#03102e}
+  body:has(#home.active) .app-header,body:has(#home.active) .side-nav{display:block!important}
+}
 </style></head>
 <body><div id="castillo-fixed-canvas">
 <header class="app-header">
@@ -899,41 +938,29 @@ nav.side-nav:after{bottom:125px!important;height:360px!important;left:-120px!imp
 </header>
 <main>
 <section id="home" class="screen active">
-  <div class="home-top-options" style="display:none!important">
-  <button onclick="go('clients')">👥 <span>Ver clientes</span><b>›</b></button>
-  <button onclick="go('cut')">▥ <span>Ver corte semanal</span><b>›</b></button>
-</div>
-  <div class="welcome card">
-    <div><h2>¡Hola, <span>Administrador!</span></h2><p>Aquí tienes un resumen de tu día.</p></div>
-    <div class="goal-copy"><b>Grandes metas<br>comienzan con<br>una buena gestión.</b><strong>🎯</strong></div>
-  </div>
-  <div class="dashboard-layout">
-    <div class="dashboard-main">
-      <div class="stats-grid">
-        <div class="dash-stat card"><div class="stat-icon blue">👥</div><span>Total Clientes</span><b id="statClients">248</b><small>activos en el sistema</small><div class="progress"><i style="width:72%"></i></div></div>
-        <div class="dash-stat card"><div class="stat-icon gold">💲</div><span>Total Créditos</span><b id="statWeek">$1,250,000</b><small class="up">↑ 12% vs. mes anterior</small><div class="progress"><i style="width:58%"></i></div></div>
-        <div class="dash-stat card"><div class="stat-icon cyan">🎯</div><span>Pagos Recibidos</span><b id="statPending">$842,500</b><small>este periodo</small><div class="progress"><i style="width:68%"></i></div></div>
-        <div class="dash-stat card"><div class="stat-icon cyan">▣</div><span>Cuentas Activas</span><b id="statCredits">6</b><small>créditos activos</small><div class="progress"><i style="width:43%"></i></div></div>
-      </div>
-      <div class="dash-card card tasks-card"><div class="section-title"><span>☑️</span><b>Tareas de hoy</b><button class="link-btn">Ver todas →</button></div><div class="tasks"><div>✓ <span>Revisar pagos del día</span><time>09:00</time> ›</div><div>✓ <span>Llamar a clientes pendientes</span><time>11:00</time> ›</div><div>○ <span>Actualizar créditos</span><time>14:00</time> ›</div><div>○ <span>Generar reporte semanal</span><time>16:00</time> ›</div><div>○ <span>Revisar documentos</span><time>18:00</time> ›</div></div><div id="homePending" class="hidden-data"></div></div>
-      <div class="dash-card card finance-card"><div class="section-title"><span>▥</span><b>Resumen financiero</b><button class="link-btn">Ver detalles →</button></div><div class="finance-row"><div id="miniChart" class="mini-chart"></div><div class="finance-values"><div>● <span>Ingresos</span><b id="finIncome">$0</b></div><div>● <span>Saldo pendiente</span><b id="finPending">$0</b></div><div>● <span>Pagos</span><b id="finPayments">0</b></div></div></div></div>
-      <div class="dash-card card goals-card"><div class="section-title"><span>🎯</span><b>Tus metas</b><button class="link-btn">Ver todas →</button></div><div class="goal-line"><span>⭐</span><div><b>Meta de este mes</b><div class="progress big"><i id="goalBar" style="width:68%"></i></div></div><strong id="goalPct">68%</strong></div></div>
-      <div class="card cut-strip"><span>📅 <b>Corte semanal</b></span><small id="cutInfo"></small><button class="secondary" onclick="go('cut')">Ver corte →</button></div>
-    </div>
-    <aside class="dashboard-side">
-      <div class="quick card"><h3>⚡ Acciones rápidas</h3>
-<button onclick="showAdd()">👥 <span>Nuevo cliente</span> ›</button>
-<button onclick="showAddCredit()">▣ <span>Nuevo crédito</span> ›</button>
-<button onclick="openQuickPayment()">💲 <span>Registrar pago</span> ›</button>
-<button onclick="go('data')">🏦 <span>Nueva cuenta</span> ›</button>
-<button onclick="exportBackup()">▥ <span>Generar reporte</span> ›</button>
-<button onclick="go('data')">📄 <span>Subir documento</span> ›</button>
-</div>
-
-      <div class="calendar card"><div class="section-title"><span>▣</span><b>Calendario</b></div><div id="calendarBox"></div></div>
-      <div class="motto card"><b>Disciplina hoy,<br>resultados mañana.</b><span>━━━━</span><div>🏔️</div></div>
-      <div id="homeOverdue" class="hidden-data"></div>
-    </aside>
+  <div class="fixed-dashboard-image" aria-label="Panel principal de Financiera Castillo">
+    <img src="/assets/castillo-dashboard.webp" alt="Panel principal Financiera Castillo">
+    <div class="fixed-hit hit-inicio" onclick="go('home')" aria-label="Inicio"></div>
+    <div class="fixed-hit hit-clientes" onclick="go('clients')" aria-label="Clientes"></div>
+    <div class="fixed-hit hit-creditos" onclick="go('clients');setTimeout(()=>document.getElementById('search')?.focus(),50)" aria-label="Créditos"></div>
+    <div class="fixed-hit hit-pagos" onclick="openQuickPayment()" aria-label="Pagos"></div>
+    <div class="fixed-hit hit-cuentas" onclick="go('data')" aria-label="Cuentas"></div>
+    <div class="fixed-hit hit-reportes" onclick="exportBackup()" aria-label="Reportes"></div>
+    <div class="fixed-hit hit-calendario" onclick="go('home')" aria-label="Calendario"></div>
+    <div class="fixed-hit hit-documentos" onclick="go('data')" aria-label="Documentos"></div>
+    <div class="fixed-hit hit-configuracion" onclick="go('data')" aria-label="Configuración"></div>
+    <div class="fixed-hit hit-nuevo-cliente" onclick="showAdd()" aria-label="Nuevo Cliente"></div>
+    <div class="fixed-hit hit-nuevo-credito" onclick="showAddCredit()" aria-label="Nuevo Crédito"></div>
+    <div class="fixed-hit hit-registrar-pago" onclick="openQuickPayment()" aria-label="Registrar Pago"></div>
+    <div class="fixed-hit hit-nueva-cuenta" onclick="go('data')" aria-label="Nueva Cuenta"></div>
+    <div class="fixed-hit hit-generar-reporte" onclick="exportBackup()" aria-label="Generar Reporte"></div>
+    <div class="fixed-hit hit-subir-documento" onclick="go('data')" aria-label="Subir Documento"></div>
+    <div class="fixed-hit hit-acceso-clientes" onclick="go('clients')" aria-label="Acceso Clientes"></div>
+    <div class="fixed-hit hit-acceso-creditos" onclick="go('clients');setTimeout(()=>document.getElementById('search')?.focus(),50)" aria-label="Acceso Créditos"></div>
+    <div class="fixed-hit hit-acceso-pagos" onclick="openQuickPayment()" aria-label="Acceso Pagos"></div>
+    <div class="fixed-hit hit-acceso-reportes" onclick="exportBackup()" aria-label="Acceso Reportes"></div>
+    <div class="fixed-hit hit-acceso-documentos" onclick="go('data')" aria-label="Acceso Documentos"></div>
+    <div class="fixed-hit hit-acceso-configuracion" onclick="go('data')" aria-label="Acceso Configuración"></div>
   </div>
 </section>
 
