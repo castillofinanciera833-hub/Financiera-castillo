@@ -799,6 +799,31 @@ nav.side-nav:after{bottom:125px!important;height:360px!important;left:-120px!imp
   }
   nav.side-nav{z-index:80!important}
 }
+</style><style id="home-options-top-final">
+@media (min-width:761px) and (orientation:landscape){
+  .home-top-options{
+    width:100%!important;height:62px!important;
+    display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:12px!important;margin:0 0 12px!important;
+  }
+  .home-top-options button{
+    height:62px!important;border-radius:16px!important;
+    border:1px solid #118cff!important;
+    background:linear-gradient(100deg,#082d70,#0a56b7)!important;
+    color:#eaf5ff!important;display:flex!important;align-items:center!important;
+    justify-content:center!important;gap:12px!important;
+    font-size:17px!important;font-weight:700!important;
+    box-shadow:0 5px 16px rgba(0,93,190,.2)!important;
+  }
+  .home-top-options button:first-child{background:linear-gradient(100deg,#0878f2,#10a9ed)!important}
+  .home-top-options button span{font-size:17px!important}
+  .home-top-options button b{font-size:22px!important;color:#9fe2ff!important}
+  .welcome{margin-top:0!important}
+}
+@media (max-width:760px){
+  .home-top-options{display:grid!important;grid-template-columns:1fr!important;gap:8px!important;margin-bottom:12px!important}
+  .home-top-options button{min-height:48px!important;border-radius:14px!important}
+}
 </style></head>
 <body>
 <header class="app-header">
@@ -819,6 +844,11 @@ nav.side-nav:after{bottom:125px!important;height:360px!important;left:-120px!imp
 </header>
 <main>
 <section id="home" class="screen active">
+  <div class="home-top-options">
+  <button onclick="go('clients')">👥 <span>Ver clientes</span><b>›</b></button>
+  <button onclick="go('cut')">▥ <span>Ver corte semanal</span><b>›</b></button>
+  <button onclick="go('data')">💾 <span>Datos y respaldo</span><b>›</b></button>
+</div>
   <div class="welcome card">
     <div><h2>¡Hola, <span>Administrador!</span></h2><p>Aquí tienes un resumen de tu día.</p></div>
     <div class="goal-copy"><b>Grandes metas<br>comienzan con<br>una buena gestión.</b><strong>🎯</strong></div>
@@ -843,11 +873,7 @@ nav.side-nav:after{bottom:125px!important;height:360px!important;left:-120px!imp
 <button onclick="openQuickPayment()">✓ <span>Registrar pago</span> ›</button>
 <button onclick="exportBackup()">▤ <span>Generar reporte</span> ›</button>
 </div>
-<div class="side-functions card"><div class="section-title"><span>✦</span><b>Accesos rápidos</b></div>
-<button onclick="go('clients')">👥 <span>Ver clientes</span> <b>›</b></button>
-<button onclick="go('cut')">▥ <span>Ver corte semanal</span> <b>›</b></button>
-<button onclick="go('data')">💾 <span>Datos y respaldo</span> <b>›</b></button>
-</div>
+
       <div class="calendar card"><div class="section-title"><span>▣</span><b>Calendario</b></div><div id="calendarBox"></div></div>
       <div class="motto card"><b>Disciplina hoy,<br>resultados mañana.</b><span>━━━━</span><div>🏔️</div></div>
       <div id="homeOverdue" class="hidden-data"></div>
