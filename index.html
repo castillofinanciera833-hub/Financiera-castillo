@@ -848,7 +848,38 @@ nav.side-nav:after{bottom:125px!important;height:360px!important;left:-120px!imp
     el.textContent=d.toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
   }
 })();
-</script></head>
+</script><style id="fixed-dashboard-reference-final">
+/* ===== PANEL FIJO BASADO EN LA IMAGEN DE REFERENCIA ===== */
+@media (min-width:761px) and (orientation:landscape){
+  #home{position:relative!important}
+  /* El contenido visual es fijo; solo controles/botones reciben interacción */
+  #home .card,#home .welcome,#home .dash-stat,#home .dash-card,#home .calendar,#home .motto{
+    pointer-events:none!important;user-select:none!important;cursor:default!important;
+  }
+  #home button,#home nav button,#home .home-top-options button,
+  #home .quick button,#home .side-functions button,#home .cut-strip button,
+  #home .link-btn{
+    pointer-events:auto!important;cursor:pointer!important;
+  }
+  #home .dashboard-layout{
+    grid-template-columns:minmax(0,1fr) 325px!important;
+    gap:14px!important;
+  }
+  #home .stats-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+  #home .dash-stat{height:178px!important;min-height:178px!important}
+  #home .tasks-card{min-height:250px!important}
+  #home .finance-card{min-height:300px!important}
+  #home .goals-card{min-height:210px!important}
+  #home .quick{min-height:365px!important}
+  #home .side-functions{min-height:365px!important}
+  #home .calendar{min-height:300px!important}
+  #home .motto{min-height:130px!important}
+  #home .welcome{margin-bottom:16px!important}
+  /* Desactivar elementos decorativos que parezcan botones */
+  #home .section-title .link-btn{display:none!important}
+  #home .cut-strip button{display:none!important}
+}
+</style></head>
 <body><div id="castillo-fixed-canvas">
 <header class="app-header">
   <div class="brand"><div class="logo-original" aria-label="Castillo Financiera">
@@ -868,7 +899,7 @@ nav.side-nav:after{bottom:125px!important;height:360px!important;left:-120px!imp
 </header>
 <main>
 <section id="home" class="screen active">
-  <div class="home-top-options">
+  <div class="home-top-options" style="display:none!important">
   <button onclick="go('clients')">👥 <span>Ver clientes</span><b>›</b></button>
   <button onclick="go('cut')">▥ <span>Ver corte semanal</span><b>›</b></button>
 </div>
@@ -879,10 +910,10 @@ nav.side-nav:after{bottom:125px!important;height:360px!important;left:-120px!imp
   <div class="dashboard-layout">
     <div class="dashboard-main">
       <div class="stats-grid">
-        <div class="dash-stat card"><div class="stat-icon blue">👥</div><span>Total de clientes</span><b id="statClients">0</b><small>activos en el sistema</small><div class="progress"><i style="width:72%"></i></div></div>
-        <div class="dash-stat card"><div class="stat-icon gold">💲</div><span>Créditos otorgados</span><b id="statWeek">$0</b><small class="up">↑ 12% vs. mes anterior</small><div class="progress"><i style="width:58%"></i></div></div>
-        <div class="dash-stat card"><div class="stat-icon cyan">🎯</div><span>Pagos recibidos</span><b id="statPending">0</b><small>este periodo</small><div class="progress"><i style="width:68%"></i></div></div>
-        <div class="dash-stat card"><div class="stat-icon cyan">▣</div><span>Próximos vencimientos</span><b id="statCredits">0</b><small>créditos activos</small><div class="progress"><i style="width:43%"></i></div></div>
+        <div class="dash-stat card"><div class="stat-icon blue">👥</div><span>Total Clientes</span><b id="statClients">248</b><small>activos en el sistema</small><div class="progress"><i style="width:72%"></i></div></div>
+        <div class="dash-stat card"><div class="stat-icon gold">💲</div><span>Total Créditos</span><b id="statWeek">$1,250,000</b><small class="up">↑ 12% vs. mes anterior</small><div class="progress"><i style="width:58%"></i></div></div>
+        <div class="dash-stat card"><div class="stat-icon cyan">🎯</div><span>Pagos Recibidos</span><b id="statPending">$842,500</b><small>este periodo</small><div class="progress"><i style="width:68%"></i></div></div>
+        <div class="dash-stat card"><div class="stat-icon cyan">▣</div><span>Cuentas Activas</span><b id="statCredits">6</b><small>créditos activos</small><div class="progress"><i style="width:43%"></i></div></div>
       </div>
       <div class="dash-card card tasks-card"><div class="section-title"><span>☑️</span><b>Tareas de hoy</b><button class="link-btn">Ver todas →</button></div><div class="tasks"><div>✓ <span>Revisar pagos del día</span><time>09:00</time> ›</div><div>✓ <span>Llamar a clientes pendientes</span><time>11:00</time> ›</div><div>○ <span>Actualizar créditos</span><time>14:00</time> ›</div><div>○ <span>Generar reporte semanal</span><time>16:00</time> ›</div><div>○ <span>Revisar documentos</span><time>18:00</time> ›</div></div><div id="homePending" class="hidden-data"></div></div>
       <div class="dash-card card finance-card"><div class="section-title"><span>▥</span><b>Resumen financiero</b><button class="link-btn">Ver detalles →</button></div><div class="finance-row"><div id="miniChart" class="mini-chart"></div><div class="finance-values"><div>● <span>Ingresos</span><b id="finIncome">$0</b></div><div>● <span>Saldo pendiente</span><b id="finPending">$0</b></div><div>● <span>Pagos</span><b id="finPayments">0</b></div></div></div></div>
