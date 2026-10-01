@@ -849,7 +849,7 @@ nav.side-nav:after{bottom:125px!important;height:360px!important;left:-120px!imp
   }
 })();
 </script></head>
-<body>
+<body><div id="castillo-fixed-canvas">
 <header class="app-header">
   <div class="brand"><div class="logo-original" aria-label="Castillo Financiera">
 <svg viewBox="0 0 520 360" role="img" aria-label="Castillo Financiera">
@@ -1876,4 +1876,38 @@ document.addEventListener('DOMContentLoaded',function(){
   /* Se conserva el comportamiento móvil existente. */
 }
 </style>
-</body></html>
+<style id="castillo-horizontal-fixed-reference">
+@media (min-width:761px) and (orientation:landscape){
+:root{--castillo-sidebar:288px}
+html,body{margin:0!important;padding:0!important;width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;overflow:hidden!important;background:#020b20!important}
+#castillo-fixed-canvas{position:absolute!important;left:50%!important;top:50%!important;width:1536px!important;height:1024px!important;margin-left:-768px!important;margin-top:-512px!important;transform-origin:center center!important;overflow:hidden!important;background:#020b20!important}
+.app-header{position:fixed!important;left:288px!important;top:0!important;width:1248px!important;height:82px!important;padding:0!important;margin:0!important;display:block!important;z-index:300!important;background:linear-gradient(180deg,#041a46,#03163a)!important;border-bottom:1px solid #1559aa!important}
+.app-header .brand{position:fixed!important;left:-288px!important;top:0!important;width:288px!important;height:160px!important;padding:0!important;margin:0!important;display:flex!important;align-items:center!important;justify-content:center!important;background:linear-gradient(145deg,#061f50,#031331)!important;z-index:400!important;overflow:hidden!important}
+.app-header .brand h1,.app-header .brand small,.app-header>.top-brand-logo{display:none!important}
+.app-header .brand .logo-original{width:270px!important;height:150px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;background:transparent!important}
+.app-header .brand .logo-original img,.app-header .brand .logo-original svg{width:258px!important;height:148px!important;max-width:258px!important;max-height:148px!important;object-fit:contain!important;display:block!important;position:static!important}
+.app-header>.top-search{position:absolute!important;left:26px!important;top:20px!important;width:650px!important;height:44px!important;max-width:none!important;margin:0!important;padding:0 18px!important;display:flex!important;align-items:center!important;border-radius:24px!important;background:#0a2a5d!important;border:1px solid #126fe0!important}
+.app-header>.top-search input{height:40px!important;width:100%!important;border:0!important;outline:0!important;background:transparent!important;color:#fff!important;font-size:16px!important}
+.app-header>.top-actions{position:absolute!important;right:24px!important;top:18px!important;height:48px!important;margin:0!important;display:flex!important;align-items:center!important;gap:20px!important}
+nav.side-nav{position:fixed!important;left:0!important;top:160px!important;bottom:auto!important;width:288px!important;height:864px!important;padding:14px 20px 18px!important;margin:0!important;display:flex!important;flex-direction:column!important;gap:4px!important;overflow:hidden!important;z-index:250!important;background:radial-gradient(circle at 0 0,rgba(0,104,255,.8),transparent 23%),linear-gradient(180deg,#061d4b,#020b24)!important;border-right:1px solid #0b5cae!important}
+nav.side-nav button{width:248px!important;height:50px!important;min-height:50px!important;flex:0 0 50px!important;padding:6px 12px!important;margin:0!important;border-radius:14px!important;font-size:17px!important;font-weight:600!important;color:#edf6ff!important}
+nav.side-nav button span{width:38px!important;height:38px!important;flex:0 0 38px!important;margin-right:10px!important;font-size:25px!important}
+nav.side-nav button.active{background:linear-gradient(90deg,#0878f2,#11b7f5)!important;border:1px solid #18b9ff!important;box-shadow:0 0 20px #008cff55!important}
+.side-growth{width:248px!important;height:118px!important;min-height:118px!important;flex:0 0 118px!important;margin-top:auto!important;margin-bottom:10px!important;padding:16px 18px!important;border-radius:17px!important;box-sizing:border-box!important}
+.side-user{width:248px!important;height:70px!important;min-height:70px!important;flex:0 0 70px!important;margin:0!important;border-radius:17px!important}
+main{position:relative!important;margin-left:288px!important;width:1248px!important;height:942px!important;padding:96px 26px 18px!important;margin-top:0!important;box-sizing:border-box!important;background:#020b20!important;overflow:hidden!important}
+.screen{width:1196px!important;max-width:none!important;margin:0!important}#home{width:1196px!important}
+.welcome{width:1196px!important;height:86px!important;min-height:86px!important;margin:0 0 14px!important;padding:14px 10px!important;background:transparent!important;border:0!important;box-shadow:none!important}
+.welcome h2{font-size:30px!important;line-height:1.05!important;margin:0 0 5px!important}.welcome p{font-size:16px!important;margin:0!important}
+.dashboard-layout{width:1196px!important;display:grid!important;grid-template-columns:862px 320px!important;gap:14px!important;align-items:start!important}
+.dashboard-main{width:862px!important;min-width:0!important}.dashboard-side{width:320px!important;min-width:0!important;gap:14px!important}
+.stats-grid{width:862px!important;display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:12px!important}
+.dash-stat{height:178px!important;min-height:178px!important;padding:14px!important;border-radius:16px!important;background:linear-gradient(145deg,#062052,#031536)!important;border:1px solid #147fff!important;box-shadow:0 0 18px #007bff22!important}
+.dash-stat .stat-icon{width:42px!important;height:42px!important}.dash-stat span{font-size:15px!important}.dash-stat b{font-size:25px!important}.dash-stat small{font-size:12px!important}
+.dashboard-main .finance-card{height:300px!important;min-height:300px!important}.dashboard-main .tasks-card{height:248px!important;min-height:248px!important}.dashboard-main .goals-card{height:248px!important;min-height:248px!important}.dashboard-main .bottom-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:14px!important}
+.quick{width:320px!important;height:365px!important;min-height:365px!important;padding:14px!important}.quick h3{font-size:20px!important}.quick button{height:47px!important;min-height:47px!important;margin:5px 0!important;font-size:15px!important}
+.side-functions{width:320px!important;height:315px!important;min-height:315px!important;padding:14px!important}.side-functions button{height:72px!important;min-height:72px!important}.calendar{width:320px!important;height:300px!important;min-height:300px!important}.motto{display:none!important}.weekly-cut{height:54px!important;min-height:54px!important}
+}
+@media (min-width:761px) and (orientation:portrait){#castillo-fixed-canvas{position:static!important;width:100%!important;height:auto!important;margin:0!important;transform:none!important;overflow:visible!important}}
+</style>
+<script id="castillo-horizontal-fixed-scale">(function(){function fit(){var c=document.getElementById('castillo-fixed-canvas');if(!c)return;if(window.innerWidth>=761&&window.matchMedia('(orientation: landscape)').matches){var s=Math.min(1,window.innerWidth/1536,window.innerHeight/1024);c.style.transform='scale('+s+')'}else c.style.transform='none'}window.addEventListener('resize',fit,{passive:true});window.addEventListener('orientationchange',function(){setTimeout(fit,80)},{passive:true});if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fit);else fit()})();</script></div></body></html>
