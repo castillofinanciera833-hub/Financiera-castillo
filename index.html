@@ -754,6 +754,51 @@ nav.side-nav:after{bottom:125px!important;height:360px!important;left:-120px!imp
   .calendar{min-height:250px!important}
   .motto{min-height:145px!important}
 }
+</style><style id="ipad-header-logo-fix-final">
+@media (min-width:761px) and (orientation:landscape){
+  .app-header{
+    left:300px!important;right:0!important;width:auto!important;
+    padding:0!important;overflow:visible!important;z-index:90!important;
+  }
+  .app-header .brand{
+    position:fixed!important;left:0!important;top:0!important;
+    width:300px!important;height:220px!important;
+    padding:8px 10px!important;margin:0!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    box-sizing:border-box!important;overflow:hidden!important;z-index:95!important;
+  }
+  .app-header .brand .logo-original{
+    position:relative!important;left:0!important;top:0!important;
+    width:290px!important;height:205px!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    overflow:hidden!important;
+  }
+  .app-header .brand .logo-original svg{
+    position:relative!important;left:0!important;top:0!important;
+    width:290px!important;height:auto!important;
+    max-width:290px!important;max-height:205px!important;
+    display:block!important;transform:none!important;
+  }
+  .app-header>.top-brand-logo{display:none!important}
+  .app-header>.top-search{
+    position:absolute!important;left:24px!important;top:30px!important;
+    width:min(650px,calc(100% - 390px))!important;height:54px!important;
+    max-width:none!important;box-sizing:border-box!important;
+    display:flex!important;align-items:center!important;
+    padding:0 18px!important;margin:0!important;z-index:96!important;
+  }
+  .app-header>.top-actions{
+    position:absolute!important;right:24px!important;top:30px!important;
+    height:54px!important;display:flex!important;align-items:center!important;
+    margin:0!important;z-index:96!important;
+  }
+  main{
+    position:relative!important;z-index:1!important;
+    margin-left:300px!important;width:calc(100% - 300px)!important;
+    padding-top:132px!important;
+  }
+  nav.side-nav{z-index:80!important}
+}
 </style></head>
 <body>
 <header class="app-header">
